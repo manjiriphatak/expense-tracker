@@ -1,0 +1,22 @@
+:root {
+  --box-shadow: 0px 0px 8px rgba(239, 240, 240, 0.274);
+}
+
+.expense-item-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: cadetblue;
+  border-radius: 0.2rem;
+  padding: 2rem;
+  color: aliceblue;
+}
+.amount,
+.date,
+.item {
+  background-color: rgba(32, 32, 32, 0.226);
+  padding: 0.7rem;
+  border: 1.5px solid white;
+  border-radius: 0.2rem;
+  box-shadow: var(--box-shadow);
+}
