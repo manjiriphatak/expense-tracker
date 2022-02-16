@@ -1,13 +1,16 @@
 import "./ExpenseSection.css";
 import ExpenseDate from "./ExpenseDate";
+import Card from "./Card";
 
 const expense = function ExpenseSection(props) {
   return (
-    <div className="expense-item-section">
+    <Card className="expense-item-section">
       <ExpenseDate data={props.data} />
-      <div className="item">{props.data.item}</div>
-      <div className="amount">$ {props.data.amount}</div>
-    </div>
+      <div className="expense-item-description">
+        <h2 className="item">{props.data.item}</h2>
+        <Card className="amount">$ {props.data.amount}</Card>
+      </div>
+    </Card>
   );
 };
 

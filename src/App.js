@@ -1,5 +1,6 @@
 import "./App.css";
 import ExpenseSection from "./ExpenseSection";
+import Card from "./Card";
 
 function App() {
   const expenses = [
@@ -33,9 +34,12 @@ function App() {
       <header className="header">
         <h1>Welcome to your Expense Tracker</h1>
       </header>
-      <main className="expense-section">
+      <Card className="expense-section">
         <ExpenseSection data={expenses[3]} />
-      </main>
+        <ExpenseSection data={expenses[0]} />
+        <ExpenseSection data={expenses[1]} />
+        <ExpenseSection data={expenses[2]} />
+      </Card>
     </div>
   );
 }
