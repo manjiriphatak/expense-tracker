@@ -1,6 +1,7 @@
 import "./App.css";
 import ExpenseSection from "./ExpenseSection";
 import Card from "./Card";
+import ExpenseForm from "./ExpenseForm";
 
 function App() {
   const expenses = [
@@ -34,6 +35,9 @@ function App() {
       <header className="header">
         <h1>Welcome to your Expense Tracker</h1>
       </header>
+      <Card className="form">
+        <ExpenseForm />
+      </Card>
       <Card className="expense-section">
         <ExpenseSection data={expenses[3]} />
         <ExpenseSection data={expenses[0]} />
