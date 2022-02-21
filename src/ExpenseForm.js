@@ -19,6 +19,15 @@ const ExpenseFrom = () => {
 
   const handleAddNewExpense = (event) => {
     event.preventDefault();
+    const NewExpense = {
+      Title: expenseItem,
+      Amount: expenseItemAmount,
+      date: new Date(expenseItemDate),
+    };
+    console.log(NewExpense);
+    setExpenseItem("");
+    setExpenseItemAmount("");
+    setExpenseItemDate("");
   };
 
   return (
@@ -28,6 +37,7 @@ const ExpenseFrom = () => {
           {" "}
           <input
             type="text"
+            value={expenseItem}
             placeholder="Enter Expense"
             className="expenseFormInputStyle "
             onChange={HandleNewExpenseItem}
@@ -35,6 +45,7 @@ const ExpenseFrom = () => {
           <input
             type="number"
             placeholder="Enter Amount"
+            value={expenseItemAmount}
             className="expenseFormInputStyle "
             onChange={HandleNewExpenseAmount}
           />
@@ -43,10 +54,11 @@ const ExpenseFrom = () => {
           <input
             type="date"
             className="expenseFormInputStyle "
+            value={expenseItemDate}
             onChange={HandleNewExpenseDate}
           />
           <button type="submit" className="expenseFormInputStyle submitButton">
-            Submit
+            Add Expense
           </button>{" "}
         </div>
       </form>

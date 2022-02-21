@@ -1,9 +1,16 @@
+import React, { useState } from "react";
 import "./App.css";
 import ExpenseSection from "./ExpenseSection";
 import Card from "./Card";
 import ExpenseForm from "./ExpenseForm";
+import ExpenseFilter from "./ExpenseFilter";
 
 function App() {
+  const [filter, setFilter] = useState("2020");
+  const handleFilterYear = (filterYear) => {
+    setFilter(filterYear);
+  };
+
   const expenses = [
     {
       id: 1,
@@ -38,6 +45,7 @@ function App() {
       <Card className="form">
         <ExpenseForm />
       </Card>
+      <ExpenseFilter selected={filter} onFilterYear={handleFilterYear} />
       <Card className="expense-section">
         <ExpenseSection data={expenses[3]} />
         <ExpenseSection data={expenses[0]} />
