@@ -34,7 +34,7 @@ const dummyExpenseList = [
 
 function App() {
   const [expenseList, setExpenseList] = useState(dummyExpenseList);
-  const [filter, setFilter] = useState("2020");
+  const [filter, setFilter] = useState("2019");
   const handleFilterYear = (filterYear) => {
     setFilter(filterYear);
   };
@@ -44,6 +44,10 @@ function App() {
       return [newExpense, ...prevExpense];
     });
   };
+
+  const displayByFilter = expenseList.filter(
+    (expense) => expense.date.getFullYear().toString() === filter
+  );
 
   return (
     <div className="App">
@@ -55,7 +59,7 @@ function App() {
       </Card>
       <ExpenseFilter selected={filter} onFilterYear={handleFilterYear} />
       <Card className="expense-section">
-        {expenseList.map((expense) => {
+        {displayByFilter.map((expense) => {
           return <ExpenseSection key={expense.id} data={expense} />;
         })}
       </Card>
