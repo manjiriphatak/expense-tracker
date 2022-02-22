@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 import Card from "./Card";
 
-const ExpenseFrom = () => {
+const ExpenseFrom = (props) => {
   const [expenseItem, setExpenseItem] = useState("");
   const [expenseItemAmount, setExpenseItemAmount] = useState("");
   const [expenseItemDate, setExpenseItemDate] = useState("");
@@ -15,16 +15,19 @@ const ExpenseFrom = () => {
   };
   const HandleNewExpenseDate = (event) => {
     setExpenseItemDate(event.target.value);
+    console.log(event.target.value);
   };
 
   const handleAddNewExpense = (event) => {
     event.preventDefault();
     const NewExpense = {
-      Title: expenseItem,
-      Amount: expenseItemAmount,
-      date: new Date(expenseItemDate),
+      id: Math.random(),
+      item: expenseItem,
+      amount: expenseItemAmount,
+      date: new Date(expenseItemDate + "T00:00:00"),
     };
     console.log(NewExpense);
+    props.data(NewExpense);
     setExpenseItem("");
     setExpenseItemAmount("");
     setExpenseItemDate("");
