@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
-import ExpenseSection from "./ExpenseSection";
 import Card from "./Card";
-import ExpenseForm from "./ExpenseForm";
+import NewExpenseButton from "./NewExpenseButton";
 import ExpenseFilter from "./ExpenseFilter";
+import ExpenseListLogic from "./ExpenseListLogic";
 
 const dummyExpenseList = [
   {
@@ -33,44 +33,50 @@ const dummyExpenseList = [
 ];
 
 function App() {
-  const [expenseList, setExpenseList] = useState(dummyExpenseList);
+  const [updateExpenseList, setUpdateExpenseList] = useState(dummyExpenseList);
   const [filter, setFilter] = useState("Show All");
   const handleFilterYear = (filterYear) => {
     setFilter(filterYear);
   };
 
-  const handleExpenseList = (newExpense) => {
-    setExpenseList((prevExpense) => {
-      return [newExpense, ...prevExpense];
-    });
+  // const handleExpenseList = (newExpense) => {
+  //   setExpenseList((prevExpense) => {
+  //     return [newExpense, ...prevExpense];
+  //   });
+  // };
+  const handleUpdateExpenseList = (expenseList) => {
+    console.log(expenseList);
+    setUpdateExpenseList(expenseList);
   };
 
-  const displayByFilter = expenseList.filter(
+  const displayByFilter = updateExpenseList.filter(
     (expense) => expense.date.getFullYear().toString() === filter
   );
 
-  let expenseContent = <p>No expenses incured</p>;
-  if (displayByFilter.length > 0) {
-    expenseContent = displayByFilter.map((expense) => {
-      return <ExpenseSection key={expense.id} data={expense} />;
-    });
-  }
   return (
     <div className="App">
       <header className="header">
         <h1>Welcome to your Expense Tracker</h1>
       </header>
-      <Card className="form">
+
+      <NewExpenseButton
+        list={dummyExpenseList}
+        updatedExpenselist={handleUpdateExpenseList}
+      />
+
+      {/* <Card className="form">
         <ExpenseForm data={handleExpenseList} />
-      </Card>
+      </Card> */}
       <ExpenseFilter selected={filter} onFilterYear={handleFilterYear} />
-      <Card className="expense-section">
-        {filter === "Show All"
-          ? expenseList.map((expense) => {
-              return <ExpenseSection key={expense.id} data={expense} />;
-            })
-          : expenseContent}
-      </Card>
+      <li>
+        <Card className="expense-section">
+          <ExpenseListLogic
+            displayByFilterData={displayByFilter}
+            filterStateData={filter}
+            expenseListData={updateExpenseList}
+          />
+        </Card>
+      </li>
     </div>
   );
 }

@@ -26,7 +26,13 @@
   width: 30%;
   transition: all 0.2s ease-in-out;
 }
-.submitButton:hover {
+.cancelButton {
+  width: 20%;
+  margin: 0 auto;
+  transition: all 0.2s ease-in-out;
+}
+.submitButton:hover,
+.cancelButton:hover {
   cursor: pointer;
   background-color: rgb(255, 255, 255);
   color: black;

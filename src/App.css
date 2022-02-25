@@ -8,6 +8,7 @@
 }
 body {
   background-color: rgb(252, 252, 255);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 .App {
   margin: 2rem auto;
@@ -25,4 +26,28 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 1.2rem;
+}
+li {
+  list-style: none;
+}
+
+.newExpenseButton {
+  background-color: cadetblue;
+  padding: 1rem;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: 20%;
+  border-radius: 0.2rem;
+  border: 1.5px solid white;
+  box-shadow: var(--box-shadow);
+  color: white;
+  transition: all 0.2s ease-in-out;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.newExpenseButton:hover {
+  cursor: pointer;
+  border: 1.5px solid cadetblue;
+  background-color: white;
+  color: cadetblue;
 }

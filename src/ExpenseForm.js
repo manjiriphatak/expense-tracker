@@ -34,37 +34,42 @@ const ExpenseFrom = (props) => {
   };
 
   return (
-    <Card className="formCard">
-      <form className="expenseForm " onSubmit={handleAddNewExpense}>
-        <div className="formStyle">
-          {" "}
-          <input
-            type="text"
-            value={expenseItem}
-            placeholder="Enter Expense"
-            className="expenseFormInputStyle "
-            onChange={HandleNewExpenseItem}
-          />
-          <input
-            type="number"
-            placeholder="Enter Amount"
-            value={expenseItemAmount}
-            className="expenseFormInputStyle "
-            onChange={HandleNewExpenseAmount}
-          />
-        </div>
-        <div className="formStyle">
-          <input
-            type="date"
-            className="expenseFormInputStyle "
-            value={expenseItemDate}
-            onChange={HandleNewExpenseDate}
-          />
-          <button type="submit" className="expenseFormInputStyle submitButton">
-            Add Expense
-          </button>{" "}
-        </div>
-      </form>
+    <Card>
+      <Card className="formCard">
+        <form className="expenseForm " onSubmit={handleAddNewExpense}>
+          <div className="formStyle">
+            {" "}
+            <input
+              type="text"
+              value={expenseItem}
+              placeholder="Enter Expense"
+              className="expenseFormInputStyle "
+              onChange={HandleNewExpenseItem}
+            />
+            <input
+              type="number"
+              placeholder="Enter Amount"
+              value={expenseItemAmount}
+              className="expenseFormInputStyle "
+              onChange={HandleNewExpenseAmount}
+            />
+          </div>
+          <div className="formStyle">
+            <input
+              type="date"
+              className="expenseFormInputStyle "
+              value={expenseItemDate}
+              onChange={HandleNewExpenseDate}
+            />
+            <button
+              type="submit"
+              className="expenseFormInputStyle submitButton"
+            >
+              Add Expense
+            </button>{" "}
+          </div>
+        </form>
+      </Card>
     </Card>
   );
 };
