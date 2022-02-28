@@ -3,15 +3,14 @@ import ExpenseForm from "./ExpenseForm";
 import "./App.css";
 
 const NewExpenseButton = (props) => {
-  const [expenseList, setExpenseList] = useState(props.list);
   const [displayForm, setDisplayForm] = useState(false);
 
   const handleExpenseList = (newExpense) => {
-    setExpenseList((prevExpense) => {
+    let addExpense = (prevExpense) => {
       console.log([newExpense, ...prevExpense]);
       return [newExpense, ...prevExpense];
-    });
-    props.updatedExpenselist(expenseList);
+    };
+    props.updatedExpenselist(addExpense);
   };
 
   const handleNewExpenseButtonClick = () => {
