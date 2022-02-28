@@ -7,10 +7,14 @@ const NewExpenseButton = (props) => {
 
   const handleExpenseList = (newExpense) => {
     let addExpense = (prevExpense) => {
-      console.log([newExpense, ...prevExpense]);
       return [newExpense, ...prevExpense];
     };
     props.updatedExpenselist(addExpense);
+    setDisplayForm(false);
+  };
+
+  const DisplayFormToggle = () => {
+    setDisplayForm(false);
   };
 
   const handleNewExpenseButtonClick = () => {
@@ -22,7 +26,7 @@ const NewExpenseButton = (props) => {
       Add Expense
     </button>
   ) : (
-    <ExpenseForm data={handleExpenseList} />
+    <ExpenseForm data={handleExpenseList} form={DisplayFormToggle} />
   );
 };
 export default NewExpenseButton;

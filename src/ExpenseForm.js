@@ -20,6 +20,7 @@ const ExpenseFrom = (props) => {
 
   const handleAddNewExpense = (event) => {
     event.preventDefault();
+
     const NewExpense = {
       id: Math.random(),
       item: expenseItem,
@@ -68,6 +69,13 @@ const ExpenseFrom = (props) => {
               Add Expense
             </button>{" "}
           </div>
+          <button
+            type="button"
+            className="expenseFormInputStyle cancelButton"
+            onClick={props.form}
+          >
+            Cancel
+          </button>{" "}
         </form>
       </Card>
     </Card>
