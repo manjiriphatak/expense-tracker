@@ -64,19 +64,16 @@ function App() {
         updatedExpenselist={handleUpdateExpenseList}
       />
 
-      {/* <Card className="form">
-        <ExpenseForm data={handleExpenseList} />
-      </Card> */}
-      <ExpenseFilter selected={filter} onFilterYear={handleFilterYear} />
-      <li>
-        <Card className="expense-section">
+      <Card className="expense-section">
+        <ExpenseFilter selected={filter} onFilterYear={handleFilterYear} />
+        <li>
           <ExpenseListLogic
             displayByFilterData={displayByFilter}
             filterStateData={filter}
             expenseListData={updateExpenseList}
           />
-        </Card>
-      </li>
+        </li>
+      </Card>
     </div>
   );
 }
