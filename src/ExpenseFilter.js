@@ -4,7 +4,9 @@ import "./ExpenseFilter.css";
 
 const ExpenseFilter = (prop) => {
   const handleYearSelect = (event) => {
+    event.preventDefault();
     prop.onFilterYear(event.target.value);
+    console.log(event.target.value);
   };
 
   return (

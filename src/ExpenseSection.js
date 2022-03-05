@@ -7,7 +7,7 @@ const expense = function ExpenseSection(props) {
     <Card className="expense-item-section">
       <ExpenseDate data={props.data} />
       <div className="expense-item-description">
-        <h2 className="item">{props.data.item}</h2>
+        <h2 className="item">{props.data.item.toUpperCase()}</h2>
         <Card className="amount">$ {props.data.amount}</Card>
       </div>
     </Card>

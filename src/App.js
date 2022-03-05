@@ -59,7 +59,11 @@ function App() {
         updatedExpenselist={handleUpdateExpenseList}
       />
       <Card>
-        <Chart expenses={displayByFilter} />
+        <Chart
+          expenses={displayByFilter}
+          expenseListData={updateExpenseList}
+          filterStateData={filter}
+        />
       </Card>
       <Card className="expense-section">
         <ExpenseFilter selected={filter} onFilterYear={handleFilterYear} />

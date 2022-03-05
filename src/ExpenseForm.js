@@ -15,7 +15,7 @@ const ExpenseFrom = (props) => {
   };
   const HandleNewExpenseDate = (event) => {
     setExpenseItemDate(event.target.value);
-    console.log(event.target.value);
+    // console.log(event.target.value);
   };
 
   const handleAddNewExpense = (event) => {
@@ -27,7 +27,7 @@ const ExpenseFrom = (props) => {
       amount: +expenseItemAmount,
       date: new Date(expenseItemDate + "T00:00:00"),
     };
-    console.log(NewExpense);
+    // console.log(NewExpense);
     props.data(NewExpense);
     setExpenseItem("");
     setExpenseItemAmount("");

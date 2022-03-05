@@ -16,11 +16,25 @@ const Chart = (props) => {
     { label: "Nov", value: 0 },
     { label: "Dec", value: 0 },
   ];
-  for (const expense of props.expenses) {
-    const expenseMonth = expense.date.getMonth();
-    ChartDataPoints[expenseMonth].value += expense.amount;
+  if (props.filterStateData === "Show All") {
+    for (const expense of props.expenseListData) {
+      const expenseMonth = expense.date.getMonth();
+      ChartDataPoints[expenseMonth].value += expense.amount;
+    }
+  } else {
+    for (const expense of props.expenses) {
+      const expenseMonth = expense.date.getMonth();
+      ChartDataPoints[expenseMonth].value += expense.amount;
+    }
   }
+
   return <ExpenseChartSection dataPoints={ChartDataPoints} />;
+
+  //   for (const expense of props.expenses) {
+  //     const expenseMonth = expense.date.getMonth();
+  //     ChartDataPoints[expenseMonth].value += expense.amount;
+  //   }
+  //   return <ExpenseChartSection dataPoints={ChartDataPoints} />;
 };
 
 export default Chart;

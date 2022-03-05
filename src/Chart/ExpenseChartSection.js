@@ -6,9 +6,9 @@ const ExpenseChartSection = (props) => {
   const MaxDatapointCalculation = props.dataPoints.map(
     (dataPoint) => dataPoint.value
   );
-  console.log(props.dataPoints.value);
+  // console.log(props.dataPoints.value);
   const maximumValue = Math.max(...MaxDatapointCalculation);
-  console.log(maximumValue);
+  // console.log(maximumValue);
   return (
     <div className="chartSection">
       {props.dataPoints.map((datapoint) => (
