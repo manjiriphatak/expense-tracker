@@ -24,7 +24,7 @@ const ExpenseFrom = (props) => {
     const NewExpense = {
       id: Math.random(),
       item: expenseItem,
-      amount: expenseItemAmount,
+      amount: +expenseItemAmount,
       date: new Date(expenseItemDate + "T00:00:00"),
     };
     console.log(NewExpense);

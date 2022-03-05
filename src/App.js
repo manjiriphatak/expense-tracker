@@ -4,13 +4,14 @@ import Card from "./Card";
 import NewExpenseButton from "./NewExpenseButton";
 import ExpenseFilter from "./ExpenseFilter";
 import ExpenseListLogic from "./ExpenseListLogic";
+import Chart from "./Chart/Chart";
 
 const dummyExpenseList = [
   {
     id: 1,
     item: "Car Insurance",
     amount: 265,
-    date: new Date("2014, 7, 29"),
+    date: new Date("2019, 7, 29"),
   },
   {
     id: 2,
@@ -22,13 +23,13 @@ const dummyExpenseList = [
     id: 3,
     item: "Fuel",
     amount: 1265,
-    date: new Date("2013, 12, 20"),
+    date: new Date("2020, 12, 20"),
   },
   {
     id: 4,
     item: "Grocery",
     amount: 4000,
-    date: new Date("2000, 10, 4"),
+    date: new Date("2022, 10, 4"),
   },
 ];
 
@@ -39,13 +40,7 @@ function App() {
     setFilter(filterYear);
   };
 
-  // const handleExpenseList = (newExpense) => {
-  //   setExpenseList((prevExpense) => {
-  //     return [newExpense, ...prevExpense];
-  //   });
-  // };
   const handleUpdateExpenseList = (expenseList) => {
-    console.log(expenseList);
     setUpdateExpenseList(expenseList);
   };
 
@@ -63,7 +58,9 @@ function App() {
         list={dummyExpenseList}
         updatedExpenselist={handleUpdateExpenseList}
       />
-
+      <Card>
+        <Chart expenses={displayByFilter} />
+      </Card>
       <Card className="expense-section">
         <ExpenseFilter selected={filter} onFilterYear={handleFilterYear} />
         <li>
