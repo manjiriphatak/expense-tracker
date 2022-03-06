@@ -51,7 +51,7 @@ const ExpenseApp = () => {
   return (
     <div className="expenseApp">
       <header className="header">
-        <h1> Expense Tracker</h1>
+        <h1> EXPENSE TRACKER</h1>
       </header>
 
       <NewExpenseButton

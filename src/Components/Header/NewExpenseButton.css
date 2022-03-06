@@ -1,11 +1,11 @@
 .newExpenseButton {
   background: linear-gradient(
     to right,
-    rgb(60, 16, 83),
-    rgb(138, 64, 108),
-    rgb(146, 74, 117),
-    rgb(109, 40, 81),
-    rgb(75, 12, 49)
+    #3c1053,
+    #8a406c,
+    #924a75,
+    #6d2851,
+    #4b0c31
   );
 
   background-size: 300% 100%;
