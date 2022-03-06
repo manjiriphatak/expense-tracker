@@ -1,0 +1,13 @@
+.expenseApp {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 2rem;
+}
+.expense-section {
+  display: flex;
+  flex-direction: column;
+}
+li {
+  list-style: none;
+}

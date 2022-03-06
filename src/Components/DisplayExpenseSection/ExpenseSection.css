@@ -1,0 +1,83 @@
+:root {
+  --box-shadow: 1px 2px 8px rgb(60, 16, 83);
+  --Font-Family: "Montserrat", sans-serif;
+  --color-gradient: linear-gradient(rgb(173, 83, 137), rgb(60, 16, 83));
+}
+.noExpenseMessage {
+  font-size: 1rem;
+  margin: 2rem;
+}
+.expense-item-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-gradient);
+  padding: 1rem;
+  margin: 1rem;
+  color: aliceblue;
+  gap: 1rem;
+}
+.expense-item-description {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex: 1;
+}
+.item {
+  font-weight: 400;
+  align-self: center;
+  text-align: left;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+.amount {
+  padding: 0.3rem 0.7rem;
+  background-color: rgba(32, 32, 32, 0.226);
+  font-size: 1rem;
+}
+.date {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.8rem;
+  background-color: rgba(32, 32, 32, 0.226);
+  width: 3rem;
+  padding: 0.3rem 0.1rem;
+}
+.dateNumber {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .noExpenseMessage {
+    font-size: 1.5rem;
+    margin: 5rem;
+  }
+  .expense-item-section {
+    padding: 2rem;
+    margin: 2rem;
+    gap: 3rem;
+  }
+
+  .item {
+    font-size: 1.3rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+  .amount {
+    font-size: 1.3rem;
+  }
+  .date {
+    flex-direction: row;
+    font-size: 1.2rem;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 12rem;
+    padding: 0.3rem 0.1rem;
+  }
+  .dateNumber {
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
+}

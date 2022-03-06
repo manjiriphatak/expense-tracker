@@ -4,54 +4,17 @@
   padding: 0;
 }
 :root {
-  --box-shadow: 1px 2px 8px rgba(75, 104, 104, 0.473);
+  --box-shadow: 1px 2px 8px rgb(60, 16, 83);
+  --Font-Family: "Montserrat", sans-serif;
+  --color-gradient: linear-gradient(rgb(173, 83, 137), rgb(60, 16, 83));
 }
 body {
   background-color: rgb(252, 252, 255);
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: var(--Font-Family);
+  letter-spacing: 0.08rem;
 }
 .App {
   margin: 2rem auto;
+  padding: 0 0.5rem;
   max-width: 70rem;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap: 2rem;
-}
-.header {
-  margin-bottom: 2rem;
-}
-
-.expense-section {
-  display: flex;
-  flex-direction: column;
-  font-size: 1.2rem;
-}
-li {
-  list-style: none;
-}
-
-.newExpenseButton {
-  background-color: cadetblue;
-  padding: 1rem;
-  margin: 0 auto;
-  font-size: 1.5rem;
-  font-weight: 600;
-  width: 20%;
-  border-radius: 0.2rem;
-  border: 1.5px solid white;
-  box-shadow: var(--box-shadow);
-  color: white;
-  transition: all 0.2s ease-in-out;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-}
-.newExpenseButton:hover {
-  cursor: pointer;
-  border: 1.5px solid cadetblue;
-  background-color: white;
-  color: cadetblue;
-}
-.noExpenseMessage {
-  font-size: 2rem;
-  margin-bottom: 1rem;
 }

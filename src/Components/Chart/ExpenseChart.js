@@ -7,7 +7,7 @@ const ExpenseChart = (props) => {
   if (props.maxValue > 0) {
     barFill = Math.round((props.value / props.maxValue) * 100) + `%`;
   }
-  console.log(`is ${barFill}`);
+
   return (
     <div className={styles.chartSection}>
       <div className={styles.chartContainer}>

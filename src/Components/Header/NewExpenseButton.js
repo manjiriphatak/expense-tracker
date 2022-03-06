@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ExpenseForm from "./ExpenseForm";
-import "./App.css";
+import "./NewExpenseButton.css";
 
 const NewExpenseButton = (props) => {
   const [displayForm, setDisplayForm] = useState(false);

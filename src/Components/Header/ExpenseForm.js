@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
-import Card from "./Card";
+import Card from "../Card/Card";
 
 const ExpenseFrom = (props) => {
   const [expenseItem, setExpenseItem] = useState("");
@@ -54,28 +54,28 @@ const ExpenseFrom = (props) => {
               className="expenseFormInputStyle "
               onChange={HandleNewExpenseAmount}
             />
-          </div>
-          <div className="formStyle">
             <input
               type="date"
-              className="expenseFormInputStyle "
+              className="expenseFormInputStyle datePicker"
               value={expenseItemDate}
               onChange={HandleNewExpenseDate}
-            />
+            />{" "}
+          </div>
+          <div className="buttonStyle">
             <button
               type="submit"
-              className="expenseFormInputStyle submitButton"
+              className="expenseFormInputStyle  buttonHover"
             >
               Add Expense
             </button>{" "}
+            <button
+              type="button"
+              className="expenseFormInputStyle buttonHover"
+              onClick={props.form}
+            >
+              Cancel
+            </button>{" "}
           </div>
-          <button
-            type="button"
-            className="expenseFormInputStyle cancelButton"
-            onClick={props.form}
-          >
-            Cancel
-          </button>{" "}
         </form>
       </Card>
     </Card>

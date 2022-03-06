@@ -1,0 +1,74 @@
+:root {
+  --box-shadow: 1px 2px 8px rgb(60, 16, 83);
+  --Font-Family: "Montserrat", sans-serif;
+  --color-gradient: linear-gradient(rgb(173, 83, 137), rgb(60, 16, 83));
+}
+
+.expenseForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0rem;
+}
+
+.expenseFormInputStyle {
+  font-size: 1rem;
+  padding: 0.5rem;
+  color: rgb(85, 83, 83);
+  background-color: rgb(240, 239, 239);
+  border-radius: 0.2rem;
+  border: none;
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+.expenseFormInputStyle:focus {
+  outline: none;
+  background-color: white;
+}
+.formStyle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.buttonStyle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+.buttonHover {
+  transition: all 0.2s ease-in-out;
+}
+.buttonHover:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+.formCard {
+  background: var(--color-gradient);
+  padding: 1rem;
+  margin: 1rem;
+}
+
+@media (min-width: 768px) {
+  .formCard {
+    padding: 2rem;
+    margin: 2rem;
+  }
+  .expenseForm {
+    gap: 2rem;
+    padding: 1rem;
+  }
+  .formStyle {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .buttonStyle {
+    gap: 4rem;
+    justify-content: space-around;
+    width: 80%;
+    margin: auto;
+  }
+}
